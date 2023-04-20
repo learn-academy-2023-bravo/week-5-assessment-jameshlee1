@@ -102,4 +102,22 @@ const handFour = [7, 2, 7, 2, 7]
 // Expected output: true
 
 // b) Create the function that makes the test pass.
+// Pseudo: Create a function fullHouse that takes in a  array then create another variable cards to input the key value. Then using a for loop to iterate the array. Then get the value for cards and compare the data from the array. Then return true if the values pulled from the cards are identical to the input array.
 
+const fullHouse = (boat) => {
+  const cards = {}
+  for (const hand of boat) {
+    if (cards[hand]) {
+      cards[hand]++
+    } else {
+      cards[hand] = 1
+    }
+  }
+  
+  const values = Object.values(cards)
+  return values.includes(2) && values.includes(3)
+}
+
+// PASS  ./code-challenges.test.js
+//   fullHouse
+//     ✓ takes in an array of 5 numbers and determines whether or not the array is a full house
